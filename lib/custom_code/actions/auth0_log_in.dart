@@ -14,7 +14,7 @@ Future<void> auth0LogIn() async {
         Auth0(FFAppState().Auth0ClientDomain, FFAppState().Auth0ClientID);
 
     final Credentials credentials =
-        await auth0.webAuthentication(scheme: "auth0signin").login();
+        await auth0.webAuthentication(scheme: "https").login();
 
     if (await auth0.credentialsManager.hasValidCredentials())
       FFAppState().update(() {

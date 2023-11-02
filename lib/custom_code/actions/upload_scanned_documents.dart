@@ -18,7 +18,7 @@ Future<void> uploadScannedDocuments(List<String>? documentPaths) async {
       final credentials = await auth0.credentialsManager.credentials();
       String endpoint =
           "https://doubledfinancial-files.azurewebsites.net/api/file/" +
-              (credentials.user.email ?? "");
+              (credentials.user.sub ?? "");
 
       // Construct the file map
       Map<String, MultipartFile> data = {};

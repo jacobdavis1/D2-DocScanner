@@ -13,8 +13,9 @@ Future<void> auth0LogIn() async {
     final Auth0 auth0 =
         Auth0(FFAppState().Auth0ClientDomain, FFAppState().Auth0ClientID);
 
-    final Credentials credentials =
-        await auth0.webAuthentication(scheme: FFAppState().Auth0Scheme).login();
+    final Credentials credentials = await auth0
+        .webAuthentication(scheme: FFAppState().Auth0Scheme)
+        .login(audience: '/files');
 
     if (await auth0.credentialsManager.hasValidCredentials())
       FFAppState().update(() {

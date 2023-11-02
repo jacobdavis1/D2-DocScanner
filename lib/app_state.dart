@@ -39,6 +39,12 @@ class FFAppState extends ChangeNotifier {
   set Auth0ClientDomain(String _value) {
     _Auth0ClientDomain = _value;
   }
+
+  String _Auth0Scheme = 'https';
+  String get Auth0Scheme => _Auth0Scheme;
+  set Auth0Scheme(String _value) {
+    _Auth0Scheme = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

@@ -13,7 +13,7 @@ Future<void> auth0LogOut() async {
     final Auth0 auth0 =
         Auth0(FFAppState().Auth0ClientDomain, FFAppState().Auth0ClientID);
 
-    await auth0.webAuthentication(scheme: "auth0signin").logout();
+    await auth0.webAuthentication(scheme: FFAppState().Auth0Scheme).logout();
 
     FFAppState().update(() {
       FFAppState().hasCredentials = false;

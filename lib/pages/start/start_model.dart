@@ -15,8 +15,6 @@ class StartModel extends FlutterFlowModel<StartWidget> {
   final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - hasValidCredentials] action in Start widget.
   bool? isLoggedIn;
-  // Stores action output result for [Custom Action - scanDocuments] action in Button widget.
-  List<String>? scannedDocs;
 
   /// Initialization and disposal methods.
 

@@ -12,6 +12,8 @@ class SignInModel extends FlutterFlowModel<SignInWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Stores action output result for [Custom Action - scanDocuments] action in Upload widget.
+  List<String>? scanned;
 
   /// Initialization and disposal methods.
 

@@ -40,7 +40,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : const StartWidget(),
+          : const MainPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -55,17 +55,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : const StartWidget(),
+              : const MainPageWidget(),
         ),
         FFRoute(
-          name: 'Start',
-          path: '/start',
-          builder: (context, params) => const StartWidget(),
-        ),
-        FFRoute(
-          name: 'SignIn',
-          path: '/signIn',
-          builder: (context, params) => const SignInWidget(),
+          name: 'MainPage',
+          path: '/mainPage',
+          builder: (context, params) => const MainPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

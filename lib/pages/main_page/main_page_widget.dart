@@ -4,25 +4,25 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'sign_in_model.dart';
-export 'sign_in_model.dart';
+import 'main_page_model.dart';
+export 'main_page_model.dart';
 
-class SignInWidget extends StatefulWidget {
-  const SignInWidget({super.key});
+class MainPageWidget extends StatefulWidget {
+  const MainPageWidget({super.key});
 
   @override
-  State<SignInWidget> createState() => _SignInWidgetState();
+  State<MainPageWidget> createState() => _MainPageWidgetState();
 }
 
-class _SignInWidgetState extends State<SignInWidget> {
-  late SignInModel _model;
+class _MainPageWidgetState extends State<MainPageWidget> {
+  late MainPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SignInModel());
+    _model = createModel(context, () => MainPageModel());
   }
 
   @override

@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:cunning_document_scanner/cunning_document_scanner.dart';
 
 Future<List<String>?> scanDocuments() async {
-  final imagesPath = await CunningDocumentScanner.getPictures();
+  final imagesPath = await CunningDocumentScanner.getPictures(true);
   return imagesPath;
 }
 

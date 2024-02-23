@@ -30,6 +30,8 @@ class _StartWidgetState extends State<StartWidget> {
       setState(() {
         FFAppState().hasCredentials = _model.isLoggedIn!;
       });
+
+      context.pushNamed('SignIn');
     });
   }
 

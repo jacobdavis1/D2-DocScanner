@@ -20,6 +20,7 @@ Future<void> auth0LogIn() async {
     if (await auth0.credentialsManager.hasValidCredentials())
       FFAppState().update(() {
         FFAppState().hasCredentials = true;
+        FFAppState().userName = credentials.user.name ?? "user";
       });
 
     // Could also read auth0.UserProfile and populate a CDT in App State

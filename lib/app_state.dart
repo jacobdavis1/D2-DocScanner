@@ -46,7 +46,7 @@ class FFAppState extends ChangeNotifier {
     _Auth0ClientDomain = value;
   }
 
-  String _Auth0Scheme = 'https';
+  String _Auth0Scheme = 'auth0signin';
   String get Auth0Scheme => _Auth0Scheme;
   set Auth0Scheme(String value) {
     _Auth0Scheme = value;

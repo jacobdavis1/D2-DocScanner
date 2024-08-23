@@ -28,7 +28,7 @@ dependencies:
   auth0_flutter:
   auto_size_text: 3.0.0
   cached_network_image: ^3.3.1
-  collection: 1.17.2
+  collection: 1.17.2^
   cunning_document_scanner: 1.1.4
   dio: ^5.3.3
   flutter_animate: ^4.5.0

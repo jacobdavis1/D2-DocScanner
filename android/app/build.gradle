@@ -15,6 +15,7 @@ if (localPropertiesFile.exists()) {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
     flutterVersionCode = '1'
@@ -25,6 +26,8 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 =======
+=======
+>>>>>>> Stashed changes
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
     throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
@@ -44,8 +47,13 @@ if (keystorePropertiesFile.exists()) {
 
 android {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     compileSdkVersion 34
     
+=======
+    compileSdkVersion 33
+
+>>>>>>> Stashed changes
 =======
     compileSdkVersion 33
 
@@ -65,10 +73,13 @@ android {
         applicationId "com.hummingbirddev.auth0signin"
         minSdkVersion 21
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
 =======
+=======
+>>>>>>> Stashed changes
         targetSdkVersion 33
         versionCode 111 // update this
         versionName "1.1.1" // update this
@@ -77,6 +88,9 @@ android {
         ndk {
             abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64'
         }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 

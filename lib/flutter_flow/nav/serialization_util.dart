@@ -30,50 +30,48 @@ String uploadedFileToString(FFUploadedFile uploadedFile) =>
 
 String? serializeParam(
   dynamic param,
-  ParamType paramType, {
+  ParamType paramType, [
   bool isList = false,
-}) {
+]) {
   try {
     if (param == null) {
       return null;
     }
     if (isList) {
       final serializedValues = (param as Iterable)
-          .map((p) => serializeParam(p, paramType, isList: false))
+          .map((p) => serializeParam(p, paramType, false))
           .where((p) => p != null)
           .map((p) => p!)
           .toList();
       return json.encode(serializedValues);
     }
-    String? data;
     switch (paramType) {
       case ParamType.int:
-        data = param.toString();
+        return param.toString();
       case ParamType.double:
-        data = param.toString();
+        return param.toString();
       case ParamType.String:
-        data = param;
+        return param;
       case ParamType.bool:
-        data = param ? 'true' : 'false';
+        return param ? 'true' : 'false';
       case ParamType.DateTime:
-        data = (param as DateTime).millisecondsSinceEpoch.toString();
+        return (param as DateTime).millisecondsSinceEpoch.toString();
       case ParamType.DateTimeRange:
-        data = dateTimeRangeToString(param as DateTimeRange);
+        return dateTimeRangeToString(param as DateTimeRange);
       case ParamType.LatLng:
-        data = (param as LatLng).serialize();
+        return (param as LatLng).serialize();
       case ParamType.Color:
-        data = (param as Color).toCssString();
+        return (param as Color).toCssString();
       case ParamType.FFPlace:
-        data = placeToString(param as FFPlace);
+        return placeToString(param as FFPlace);
       case ParamType.FFUploadedFile:
-        data = uploadedFileToString(param as FFUploadedFile);
+        return uploadedFileToString(param as FFUploadedFile);
       case ParamType.JSON:
-        data = json.encode(param);
+        return json.encode(param);
 
       default:
-        data = null;
+        return null;
     }
-    return data;
   } catch (e) {
     print('Error serializing parameter: $e');
     return null;

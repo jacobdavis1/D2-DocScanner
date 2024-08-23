@@ -24,7 +24,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     compileSdkVersion 33
-    
+
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -40,23 +40,23 @@ android {
         applicationId "com.hummingbirddev.auth0signin"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 105 // update this
-        versionName "1.0.5" // update this
-	    manifestPlaceholders = [auth0Domain: "d2financial.us.auth0.com", auth0Scheme: "auth0signin"]
+        versionCode 111 // update this
+        versionName "1.1.1" // update this
+        manifestPlaceholders = [auth0Domain: "d2financial.us.auth0.com", auth0Scheme: "auth0signin"]
 
         ndk {
             abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64'
         }
     }
 
-   signingConfigs {
-       release {
-           keyAlias keystoreProperties['keyAlias']
-           keyPassword keystoreProperties['keyPassword']
-           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-           storePassword keystoreProperties['storePassword']
-       }
-   }
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
+        }
+    }
 
     buildTypes {
         release {

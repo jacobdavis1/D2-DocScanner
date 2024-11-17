@@ -37,9 +37,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -93,21 +91,12 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                 25.0, 25.0, 0.0, 0.0),
                             child: Text(
                               'd2.financal Document Scanner',
-                              style: FlutterFlowTheme.of(context).titleLarge,
-                            ),
-                          ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        if (FFAppState().hasCredentials)
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                25.0, 12.0, 0.0, 0.0),
-                            child: Text(
-                              'Welcome back, ${FFAppState().userName}.',
-                              style: FlutterFlowTheme.of(context).labelMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleLarge
+                                  .override(
+                                    fontFamily: 'Outfit',
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                           ),
                       ],
@@ -141,6 +130,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: Colors.white,
+                                          letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
                                     borderSide: const BorderSide(
@@ -164,7 +154,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         _model.scanned?.toList(),
                                       );
 
-                                      setState(() {});
+                                      safeSetState(() {});
                                     },
                                     text: 'Scan Documents',
                                     options: FFButtonOptions(
@@ -181,6 +171,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           .override(
                                             fontFamily: 'Readex Pro',
                                             color: Colors.white,
+                                            letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
                                       borderSide: const BorderSide(
@@ -213,6 +204,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: Colors.white,
+                                          letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
                                     borderSide: const BorderSide(

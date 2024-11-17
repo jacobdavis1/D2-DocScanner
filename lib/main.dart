@@ -46,10 +46,10 @@ class _MyAppState extends State<MyApp> {
     _router = createRouter(_appStateNotifier);
 
     Future.delayed(const Duration(milliseconds: 1000),
-        () => setState(() => _appStateNotifier.stopShowingSplashImage()));
+        () => safeSetState(() => _appStateNotifier.stopShowingSplashImage()));
   }
 
-  void setThemeMode(ThemeMode mode) => setState(() {
+  void setThemeMode(ThemeMode mode) => safeSetState(() {
         _themeMode = mode;
       });
 

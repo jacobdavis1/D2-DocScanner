@@ -154,7 +154,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         _model.scanned?.toList(),
                                       );
 
-                                      setState(() {});
+                                      safeSetState(() {});
                                     },
                                     text: 'Scan Documents',
                                     options: FFButtonOptions(
